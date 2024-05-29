@@ -1,24 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name     : myapp2
+  name: helm-guestbook
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    name     : in-cluster
-    namespace: app2
+  project: default
   source:
-    path   : "HelmCharts/Chart"
-    repoURL: "https://github.com/Ullubiy/argocd.git"
+    repoURL: https://github.com/Ullubiy/argocd.git
     targetRevision: HEAD
-    helm:
-      valueFiles:
-      - values.yaml
-      parameters:
-      - name: "container.image"
-        value: adv4000/app2:v2
+    path: helm-guestbook
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: guestbook
 
   project: default
   syncPolicy:
