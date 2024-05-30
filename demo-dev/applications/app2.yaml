@@ -18,7 +18,7 @@ spec:
       - values_dev.yaml
       parameters:
       - name: "container.image"
-        value: nginx
+        value: quay.io/metallb/speaker
   project: default
   syncPolicy:
     automated:
