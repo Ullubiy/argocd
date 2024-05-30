@@ -22,6 +22,10 @@ spec:
 
   project: default
   syncPolicy:
+    ignoreDifferences:
+      - group: argoproj.io/v1alpha1
+        name: Application
+        kind: CustomResourceDefinition
     automated:
       prune   : true
       selfHeal: true
