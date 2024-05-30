@@ -18,7 +18,7 @@ spec:
       - values_dev.yaml
       parameters:
       - name: "container.image"
-        value: quay.io/quay/ubuntu
+        value: quay.io/k8slens/bored-agent
   project: default
   syncPolicy:
     automated:
