@@ -19,13 +19,8 @@ spec:
       parameters:
       - name: "container.image"
         value: adv4000/app1:v3
-
   project: default
   syncPolicy:
-    ignoreDifferences:
-      - group: argoproj.io/v1alpha1
-        name: Application
-        kind: CustomResourceDefinition
     automated:
       prune   : true
       selfHeal: true
